@@ -3,12 +3,12 @@ hexo.extend.helper.register('request_cheatsheet', () => {
 });
 
 hexo.extend.helper.register('contributing', () => {
-  return 'https://github.com/Fechin/reference';
+  return 'https://github.com/kagulion/reference/tree/russian';
 });
 
 hexo.extend.helper.register('edit_page', function () {
   const postPage = this.page.layout === 'post';
-  let url = 'https://github.com/Fechin/reference';
+  let url = 'https://github.com/kagulion/reference/tree/russian';
   if (postPage) {
     url += `/blob/main/source/_posts/${this.page.slug}.md`;
   }
