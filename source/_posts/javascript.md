@@ -20,80 +20,80 @@ plugins:
 
 JavaScript — это легковесный, интерпретируемый язык программирования.
 
-- [Шпаргалка по JSON](/json) _(cheatsheets.zip)_
-- [Регулярные выражения в JavaScript](/regex#regex-in-javascript) _(cheatsheets.zip)_
+- [Шпаргалка по JSON](/json) _(devsheet)_
+- [Регулярные выражения в JavaScript](/regex#regex-in-javascript) _(devsheet)_
 
 ### Консоль
 
 ```javascript
-// => Hello world!
-console.log('Hello world!');
+// => Привет, мир!
+console.log('Привет, мир!');
 
-// => Hello CheatSheets.zip
-console.warn('hello %s', 'CheatSheets.zip');
+// => Привет devsheet
+console.warn('привет %s', 'devsheet');
 
-// Prints error message to stderr
-console.error(new Error('Oops!'));
+// Выводит сообщение об ошибке в stderr
+console.error(new Error('Упс!'));
 ```
 
-### Numbers
+### Числа
 
 ```javascript
 let amount = 6;
 let price = 4.99;
 ```
 
-### Variables
+### Переменные
 
 ```javascript
 let x = null;
-let name = 'Tammy';
+let name = 'Тамми';
 const found = false;
 
-// => Tammy, false, null
+// => Тамми, false, null
 console.log(name, found, x);
 
 var a;
-console.log(a); // => undefined
+console.log(a); // => неопределено
 ```
 
-### Strings
+### Строки
 
 ```javascript
-let single = 'Wheres my bandit hat?';
-let double = 'Wheres my bandit hat?';
+let single = 'Где моя бандитская шляпа?';
+let double = 'Где моя бандитская шляпа?';
 
 // => 21
 console.log(single.length);
 ```
 
-### Arithmetic Operators
+### Арифметические операторы
 
 ```javascript
-5 + 5 = 10     // Addition
-10 - 5 = 5     // Subtraction
-5 * 10 = 50    // Multiplication
-10 / 5 = 2     // Division
-10 % 5 = 0     // Modulo
+5 + 5 = 10     // Сложение
+10 - 5 = 5     // Вычитание
+5 * 10 = 50    // Умножение
+10 / 5 = 2     // Деление
+10 % 5 = 0     // Остаток от деления
 ```
 
-### Comments
+### Комментарии
 
 ```javascript
-// This line will denote a comment
+// Эта строка обозначает комментарий
 
 /*
-The below configuration must be
-changed before deployment.
+Следующую конфигурацию нужно
+изменить перед деплоем.
 */
 ```
 
-### Assignment Operators
+### Операторы присваивания
 
 ```javascript
 let number = 100;
 
-// Both statements will add 10
+// Оба выражения добавят 10
 number = number + 10;
 number += 10;
 
@@ -101,49 +101,49 @@ console.log(number);
 // => 120
 ```
 
-### String Interpolation
+### Интерполяция строк
 
 ```javascript
 let age = 7;
 
-// String concatenation
-'Tommy is ' + age + ' years old.';
+// Конкатенация строк
+'Томми ' + age + ' лет.';
 
-// String interpolation
-`Tommy is ${age} years old.`;
+// Интерполяция строк
+`Томми ${age} лет.`;
 ```
 
-### let Keyword
+### Ключевое слово let
 
 ```javascript
 let count;
-console.log(count); // => undefined
+console.log(count); // => неопределено
 count = 10;
 console.log(count); // => 10
 ```
 
-### const Keyword
+### Ключевое слово const
 
 ```javascript
 const numberOfColumns = 4;
 
-// TypeError: Assignment to constant...
+// TypeError: Присваивание константе...
 numberOfColumns = 8;
 ```
 
-## JavaScript Conditionals
+## Условные операторы JavaScript
 
-### if Statement
+### Оператор if
 
 ```javascript
 const isMailSent = true;
 
 if (isMailSent) {
-  console.log('Mail sent to recipient');
+  console.log('Письмо отправлено получателю');
 }
 ```
 
-### Ternary Operator
+### Тернарный оператор
 
 ```javascript
 var x = 1;
@@ -152,7 +152,7 @@ var x = 1;
 result = x == 1 ? true : false;
 ```
 
-### Operators {.row-span-2}
+### Операторы {.row-span-2}
 
 ```javascript
 true || false; // true
@@ -161,7 +161,7 @@ false || false; // false
 10 > 100 || 10 > 20; // false
 ```
 
-#### Logical Operator &&
+#### Логический оператор &&
 
 ```javascript
 true && true; // true
@@ -170,7 +170,7 @@ true && false; // false
 4 === 4 && 3 > 1; // true
 ```
 
-#### Comparison Operators
+#### Операторы сравнения
 
 ```javascript
 1 > 3; // false
@@ -181,7 +181,7 @@ true && false; // false
 1 === '1'; // false
 ```
 
-#### Logical Operator !
+#### Логический оператор !
 
 ```javascript
 let lateToWork = true;
@@ -191,15 +191,13 @@ let oppositeValue = !lateToWork;
 console.log(oppositeValue);
 ```
 
-#### Nullish coalescing operator ??
+#### Оператор объединения с null ??
 
 ```javascript
-null ?? 'I win'; //  'I win'
-undefined ?? 'Me too'; //  'Me too'
+null ?? 'Я победил'; //  'Я победил'
+undefined ?? 'Я тоже'; //  'Я тоже'
 
-false ?? 'I lose'; //  false
-0 ?? 'I lose again'; //  0
-'' ?? 'Damn it'; //  ''
+false ?? 'Я проиграл'; //  false
 ```
 
 ### else if
@@ -208,35 +206,35 @@ false ?? 'I lose'; //  false
 const size = 10;
 
 if (size > 100) {
-  console.log('Big');
+  console.log('Большой');
 } else if (size > 20) {
-  console.log('Medium');
+  console.log('Средний');
 } else if (size > 4) {
-  console.log('Small');
+  console.log('Маленький');
 } else {
-  console.log('Tiny');
+  console.log('Крошечный');
 }
-// Print: Small
+// Выведет: Маленький
 ```
 
-### switch Statement
+### Оператор switch
 
 ```javascript
-const food = 'salad';
+const food = 'салат';
 
 switch (food) {
   case 'oyster':
-    console.log('The taste of the sea');
+    console.log('Вкус моря');
     break;
   case 'pizza':
-    console.log('A delicious pie');
+    console.log('Вкусная пицца');
     break;
   default:
-    console.log('Enjoy your meal');
+    console.log('Приятного аппетита');
 }
 ```
 
-### == vs ===
+### == против ===
 
 ```javascript
 0 == false; // true
@@ -249,39 +247,39 @@ null === undefined; // false
 '0' === false; // false
 ```
 
-The `==` just check the value, `===` check both the value and the type.
+Оператор `==` сравнивает только значения, а `===` сравнивает и значения, и типы.
 
-## JavaScript Functions
+## Функции JavaScript
 
-### Functions
+### Функции
 
 ```javascript
-// Defining the function:
+// Определение функции:
 function sum(num1, num2) {
   return num1 + num2;
 }
 
-// Calling the function:
+// Вызов функции:
 sum(3, 6); // 9
 ```
 
-### Anonymous Functions
+### Анонимные функции
 
 ```javascript
-// Named function
+// Именованная функция
 function rocketToMars() {
-  return 'BOOM!';
+  return 'БУМ!';
 }
 
-// Anonymous function
+// Анонимная функция
 const rocketToMars = function () {
-  return 'BOOM!';
+  return 'БУМ!';
 };
 ```
 
-### Arrow Functions (ES6) {.row-span-2}
+### Стрелочные функции (ES6) {.row-span-2}
 
-#### With two arguments
+#### С двумя аргументами
 
 ```javascript
 const sum = (param1, param2) => {
@@ -290,25 +288,25 @@ const sum = (param1, param2) => {
 console.log(sum(2, 5)); // => 7
 ```
 
-#### With no arguments
+#### Без аргументов
 
 ```javascript
 const printHello = () => {
-  console.log('hello');
+  console.log('привет');
 };
-printHello(); // => hello
+printHello(); // => привет
 ```
 
-#### With a single argument
+#### С одним аргументом
 
 ```javascript
 const checkWeight = (weight) => {
-  console.log(`Weight : ${weight}`);
+  console.log(`Вес: ${weight}`);
 };
-checkWeight(25); // => Weight : 25
+checkWeight(25); // => Вес: 25
 ```
 
-#### Concise arrow functions
+#### Краткая запись стрелочных функций
 
 ```javascript
 const multiply = (a, b) => a * b;
@@ -319,50 +317,50 @@ console.log(multiply(2, 30));
 [Arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) available
 starting ES2015
 
-### return Keyword
+### Ключевое слово return
 
 ```javascript
-// With return
+// С return
 function sum(num1, num2) {
   return num1 + num2;
 }
 
-// The function doesn't output the sum
+// Функция не возвращает сумму
 function sum(num1, num2) {
   num1 + num2;
 }
 ```
 
-### Calling Functions
+### Вызов функций
 
 ```javascript
-// Defining the function
+// Определение функции
 function sum(num1, num2) {
   return num1 + num2;
 }
 
-// Calling the function
+// Вызов функции
 sum(2, 4); // 6
 ```
 
-### Function Expressions
+### Функциональные выражения
 
 ```javascript
 const dog = function () {
-  return 'Woof!';
+  return 'Гав!';
 };
 ```
 
-### Function Parameters
+### Параметры функции
 
 ```javascript
-// The parameter is name
+// Параметр — name
 function sayHello(name) {
-  return `Hello, ${name}!`;
+  return `Привет, ${name}!`;
 }
 ```
 
-### Function Declaration
+### Объявление функции
 
 ```javascript
 function add(num1, num2) {
@@ -370,70 +368,70 @@ function add(num1, num2) {
 }
 ```
 
-## JavaScript Scope
+## Область видимости JavaScript
 
-### Scope
+### Область видимости
 
 ```javascript
 function myFunction() {
-  var pizzaName = 'Margarita';
-  // Code here can use pizzaName
+  var pizzaName = 'Маргарита';
+  // Здесь можно использовать pizzaName
 }
 
-// Code here can't use pizzaName
+// Здесь нельзя использовать pizzaName
 ```
 
-### Block Scoped Variables
+### Переменные с блочной областью видимости
 
 ```javascript
 const isLoggedIn = true;
 
 if (isLoggedIn == true) {
-  const statusMessage = 'Logged in.';
+  const statusMessage = 'Вход выполнен.';
 }
 
 // Uncaught ReferenceError...
 console.log(statusMessage);
 ```
 
-### Global Variables
+### Глобальные переменные
 
 ```javascript
-// Variable declared globally
+// Переменная объявлена глобально
 const color = 'blue';
 
 function printColor() {
   console.log(color);
 }
 
-printColor(); // => blue
+printColor(); // => синий
 ```
 
-### let vs var
+### let против var
 
 ```javascript
 for (let i = 0; i < 3; i++) {
-  // This is the Max Scope for 'let'
-  // i accessible ✔️
+  // Это максимальная область видимости для 'let'
+  // i доступна ✔️
 }
-// i not accessible ❌
+// i недоступна ❌
 ```
 
 ---
 
 ```javascript
 for (var i = 0; i < 3; i++) {
-  // i accessible ✔️
+  // i доступна ✔️
 }
-// i accessible ✔️
+// i доступна ✔️
 ```
 
-`var` is scoped to the nearest function block, and `let` is scoped to the nearest enclosing block.
+`var` ограничен ближайшей функцией, а `let` — ближайшим блоком кода.
 
-### Loops with closures
+### Циклы с замыканиями
 
 ```javascript{.wrap}
-// Prints 3 thrice, not what we meant.
+// Три раза выведет 3, не то, что мы хотели.
 for (var i = 0; i < 3; i++) {
   setTimeout(_ => console.log(i), 10);
 }
@@ -442,26 +440,26 @@ for (var i = 0; i < 3; i++) {
 ---
 
 ```javascript{.wrap}
-// Prints 0, 1 and 2, as expected.
+// Выведет 0, 1 и 2, как ожидалось.
 for (let j = 0; j < 3; j++) {
   setTimeout(_ => console.log(j), 10);
 }
 ```
 
-The variable has its own copy using `let`, and the variable has shared copy using `var`.
+При использовании `let` каждая итерация получает свою копию переменной, а при использовании `var` переменная общая для всех итераций.
 
-## JavaScript Arrays
+## Массивы JavaScript
 
-### Arrays
+### Массивы
 
 ```javascript
-const fruits = ['apple', 'orange', 'banana'];
+const fruits = ['яблоко', 'апельсин', 'банан'];
 
-// Different data types
-const data = [1, 'chicken', false];
+// Разные типы данных
+const data = [1, 'курица', false];
 ```
 
-### Property .length
+### Свойство .length
 
 ```javascript
 const numbers = [1, 2, 3, 4];
@@ -469,17 +467,17 @@ const numbers = [1, 2, 3, 4];
 numbers.length; // 4
 ```
 
-### Index
+### Индекс
 
 ```javascript
-// Accessing an array element
+// Доступ к элементу массива
 const myArray = [100, 200, 300];
 
 console.log(myArray[0]); // 100
 console.log(myArray[1]); // 200
 ```
 
-### Mutable chart
+### Таблица мутаций
 
 |           | add | remove | start | end |
 | :-------- | :-: | :----: | :---: | :-: |
@@ -493,51 +491,51 @@ console.log(myArray[1]); // 200
 ### Array.push()
 
 ```javascript
-// Adding a single element:
-const cart = ['apple', 'orange'];
-cart.push('pear');
+// Добавление одного элемента:
+const cart = ['яблоко', 'апельсин'];
+cart.push('груша');
 
-// Adding multiple elements:
+// Добавление нескольких элементов:
 const numbers = [1, 2];
 numbers.push(3, 4, 5);
 ```
 
-Add items to the end and returns the new array length.
+Добавляет элементы в конец массива и возвращает новую длину массива.
 
 ### Array.pop()
 
 ```javascript
-const fruits = ['apple', 'orange', 'banana'];
+const fruits = ['яблоко', 'апельсин', 'банан'];
 
-const fruit = fruits.pop(); // 'banana'
-console.log(fruits); // ["apple", "orange"]
+const fruit = fruits.pop(); // 'банан'
+console.log(fruits); // ["яблоко", "апельсин"]
 ```
 
-Remove an item from the end and returns the removed item.
+Удаляет элемент с конца массива и возвращает этот элемент.
 
 ### Array.shift()
 
 ```javascript
-let cats = ['Bob', 'Willy', 'Mini'];
+let cats = ['Боб', 'Вилли', 'Мини'];
 
-cats.shift(); // ['Willy', 'Mini']
+cats.shift(); // ['Вилли', 'Мини']
 ```
 
-Remove an item from the beginning and returns the removed item.
+Удаляет элемент с начала массива и возвращает этот элемент.
 
 ### Array.unshift()
 
 ```javascript
-let cats = ['Bob'];
+let cats = ['Боб'];
 
-// => ['Willy', 'Bob']
-cats.unshift('Willy');
+// => ['Вилли', 'Боб']
+cats.unshift('Вилли');
 
-// => ['Puff', 'George', 'Willy', 'Bob']
-cats.unshift('Puff', 'George');
+// => ['Паф', 'Джордж', 'Вилли', 'Боб']
+cats.unshift('Паф', 'Джордж');
 ```
 
-Add items to the beginning and returns the new array length.
+Добавляет элементы в начало массива и возвращает новую длину массива.
 
 ### Array.concat()
 
@@ -552,65 +550,65 @@ const newFirstNumber = 4;
 numbers.concat(newFirstNumber);
 ```
 
-If you want to avoid mutating your original array, you can use concat.
+Если вы хотите избежать изменения исходного массива, используйте concat.
 
-## JavaScript Set
+## Множество JavaScript (Set)
 
-### Create Set
+### Создание Set
 
 ```javascript
-// Empty Set Object
+// Пустой объект Set
 const emptySet = new Set();
 
-// Set Object with values
-const setObj = new Set([1, true, 'hi']);
+// Объект Set со значениями
+const setObj = new Set([1, true, 'привет']);
 ```
 
-### Add
+### Добавление
 
 ```javascript
 const emptySet = new Set();
 
-// add values
+// добавление значений
 emptySet.add('a'); // 'a'
 emptySet.add(1); // 'a', 1
 emptySet.add(true); // 'a', 1, true
 emptySet.add('a'); // 'a', 1, true
 ```
 
-### Delete
+### Удаление
 
 ```javascript
 const emptySet = new Set([1, true, 'a']);
 
-// delete values
+// удаление значений
 emptySet.delete('a'); // 1, true
 emptySet.delete(true); // 1
 emptySet.delete(1); //
 ```
 
-### Has
+### Проверка наличия
 
 ```javascript
 const setObj = new Set([1, true, 'a']);
 
-// returns true or false
+// возвращает true или false
 setObj.has('a'); // true
 setObj.has(1); // true
 setObj.has(false); // false
 ```
 
-### Clear
+### Очистка
 
 ```javascript
 const setObj = new Set([1, true, 'a']);
 
-// clears the set
+// очищает set
 console.log(setObj); // 1, true, 'a'
 setObj.clear(); //
 ```
 
-### Size
+### Размер
 
 ```javascript
 const setObj = new Set([1, true, 'a']);
@@ -632,9 +630,9 @@ setObj.forEach(function (value) {
 // 'a'
 ```
 
-## JavaScript Loops
+## Циклы JavaScript
 
-### While Loop
+### Цикл while
 
 ```javascript
 while (condition) {
@@ -648,21 +646,21 @@ while (i < 5) {
 }
 ```
 
-### Reverse Loop
+### Обратный цикл
 
 ```javascript
-const fruits = ['apple', 'orange', 'banana'];
+const fruits = ['яблоко', 'апельсин', 'банан'];
 
 for (let i = fruits.length - 1; i >= 0; i--) {
   console.log(`${i}. ${fruits[i]}`);
 }
 
-// => 2. banana
-// => 1. orange
-// => 0. apple
+// => 2. банан
+// => 1. апельсин
+// => 0. яблоко
 ```
 
-### Do…While Statement
+### Цикл do…while
 
 ```javascript
 x = 0;
@@ -676,7 +674,7 @@ do {
 // => 0 1 3 6 10
 ```
 
-### For Loop
+### Цикл for
 
 ```javascript
 for (let i = 0; i < 4; i += 1) {
@@ -686,14 +684,14 @@ for (let i = 0; i < 4; i += 1) {
 // => 0, 1, 2, 3
 ```
 
-### Looping Through Arrays
+### Перебор массива
 
 ```javascript
 for (let i = 0; i < array.length; i++) {
   console.log(array[i]);
 }
 
-// => Every item in the array
+// => Каждый элемент массива
 ```
 
 ### Break
@@ -715,11 +713,11 @@ for (i = 0; i < 10; i++) {
   if (i === 3) {
     continue;
   }
-  text += 'The number is ' + i + '<br>';
+  text += 'Число: ' + i + '<br>';
 }
 ```
 
-### Nested
+### Вложенные циклы
 
 ```javascript
 for (let i = 0; i < 2; i += 1) {
@@ -729,10 +727,10 @@ for (let i = 0; i < 2; i += 1) {
 }
 ```
 
-### for...in loop
+### Цикл for...in
 
 ```javascript
-const fruits = ['apple', 'orange', 'banana'];
+const fruits = ['яблоко', 'апельсин', 'банан'];
 
 for (let index in fruits) {
   console.log(index);
@@ -742,36 +740,36 @@ for (let index in fruits) {
 // => 2
 ```
 
-### for...of loop
+### Цикл for...of
 
 ```javascript
-const fruits = ['apple', 'orange', 'banana'];
+const fruits = ['яблоко', 'апельсин', 'банан'];
 
 for (let fruit of fruits) {
   console.log(fruit);
 }
-// => apple
-// => orange
-// => banana
+// => яблоко
+// => апельсин
+// => банан
 ```
 
-## JavaScript Iterators {.cols-2}
+## Итераторы JavaScript {.cols-2}
 
-### Functions Assigned to Variables
+### Функции, присвоенные переменным
 
 ```javascript
 let plusFive = (number) => {
   return number + 5;
 };
-// f is assigned the value of plusFive
+// f присваивается значение plusFive
 let f = plusFive;
 
 plusFive(3); // 8
-// Since f has a function value, it can be invoked.
+// Так как f — функция, её можно вызвать.
 f(9); // 14
 ```
 
-### Callback Functions
+### Функции обратного вызова (Callback)
 
 ```javascript
 const isEven = (n) => {
@@ -780,12 +778,12 @@ const isEven = (n) => {
 
 let printMsg = (evenFunc, num) => {
   const isNumEven = evenFunc(num);
-  console.log(`${num} is an even number: ${isNumEven}.`);
+  console.log(`${num} — чётное число: ${isNumEven}.`);
 };
 
-// Pass in isEven as the callback function
+// Передаём isEven как callback-функцию
 printMsg(isEven, 4);
-// => 4 is an even number: True.
+// => 4 — чётное число: True.
 ```
 
 ### Array.reduce()
@@ -803,10 +801,10 @@ console.log(sum); // 10
 ### Array.map()
 
 ```javascript
-const members = ['Taylor', 'Donald', 'Don', 'Natasha', 'Bobby'];
+const members = ['Тейлор', 'Дональд', 'Дон', 'Наташа', 'Бобби'];
 
 const announcements = members.map((member) => {
-  return member + ' joined the contest.';
+  return member + ' присоединился к конкурсу.';
 });
 
 console.log(announcements);
@@ -831,20 +829,20 @@ const filteredArray = randomNumbers.filter((n) => {
 });
 ```
 
-## JavaScript Objects {.cols-2}
+## Объекты JavaScript {.cols-2}
 
-### Accessing Properties
+### Доступ к свойствам
 
 ```javascript
 const apple = {
-  color: 'Green',
-  price: { bulk: '$3/kg', smallQty: '$4/kg' }
+  color: 'Зелёный',
+  price: { bulk: '3$/кг', smallQty: '4$/кг' }
 };
-console.log(apple.color); // => Green
-console.log(apple.price.bulk); // => $3/kg
+console.log(apple.color); // => Зелёный
+console.log(apple.price.bulk); // => 3$/кг
 ```
 
-### Naming Properties
+### Именование свойств
 
 ```javascript
 // Example of invalid key names
@@ -858,154 +856,153 @@ const trainSchedule = {
 }
 ```
 
-### Non-existent properties
+### Несуществующие свойства
 
 ```javascript
 const classElection = {
-  date: 'January 12'
+  date: '12 января'
 };
 
 console.log(classElection.place); // undefined
 ```
 
-### Mutable {.row-span-2}
+### Мутация {.row-span-2}
 
 ```javascript
 const student = {
-  name: 'Sheldon',
+  name: 'Шелдон',
   score: 100,
   grade: 'A'
 };
 
 console.log(student);
-// { name: 'Sheldon', score: 100, grade: 'A' }
+// { name: 'Шелдон', score: 100, grade: 'A' }
 
 delete student.score;
 student.grade = 'F';
 console.log(student);
-// { name: 'Sheldon', grade: 'F' }
+// { name: 'Шелдон', grade: 'F' }
 
 student = {};
-// TypeError: Assignment to constant variable.
+// TypeError: Присваивание константе.
 ```
 
-### Assignment shorthand syntax
+### Сокращённая запись присваивания
 
 ```javascript
 const person = {
-  name: 'Tom',
+  name: 'Том',
   age: '22'
 };
 const { name, age } = person;
-console.log(name); // 'Tom'
+console.log(name); // 'Том'
 console.log(age); // '22'
 ```
 
-### Delete operator
+### Оператор delete
 
 ```javascript
 const person = {
-  firstName: 'Matilda',
+  firstName: 'Матильда',
   age: 27,
-  hobby: 'knitting',
-  goal: 'learning JavaScript'
+  hobby: 'вязание',
+  goal: 'изучить JavaScript'
 };
 
-delete person.hobby; // or delete person[hobby];
+delete person.hobby; // или delete person[hobby];
 
 console.log(person);
 /*
 {
-  firstName: "Matilda"
+  firstName: "Матильда"
   age: 27
-  goal: "learning JavaScript"
+  goal: "изучить JavaScript"
 }
 */
 ```
 
-### Objects as arguments
+### Объекты как аргументы
 
 ```javascript
 const origNum = 8;
-const origObj = { color: 'blue' };
+const origObj = { color: 'синий' };
 
 const changeItUp = (num, obj) => {
   num = 7;
-  obj.color = 'red';
+  obj.color = 'красный';
 };
 
 changeItUp(origNum, origObj);
 
-// Will output 8 since integers are passed by value.
+// Выведет 8, так как числа передаются по значению.
 console.log(origNum);
 
-// Will output 'red' since objects are passed
-// by reference and are therefore mutable.
+// Выведет 'красный', так как объекты передаются
+// по ссылке и являются изменяемыми.
 console.log(origObj.color);
 ```
 
-### Shorthand object creation
+### Сокращённое создание объекта
 
 ```javascript
-const activity = 'Surfing';
+const activity = 'Сёрфинг';
 const beach = { activity };
-console.log(beach); // { activity: 'Surfing' }
+console.log(beach); // { activity: 'Сёрфинг' }
 ```
 
-### this Keyword
+### Ключевое слово this
 
 ```javascript
 const cat = {
-  name: 'Pipey',
+  name: 'Пайпи',
   age: 8,
   whatName() {
     return this.name;
   }
 };
-console.log(cat.whatName()); // => Pipey
+console.log(cat.whatName()); // => Пайпи
 ```
 
-### Factory functions
+### Фабричные функции
 
 ```javascript
-// A factory function that accepts 'name',
-// 'age', and 'breed' parameters to return
-// a customized dog object.
+// Фабричная функция, принимающая параметры 'name',
+// 'age' и 'breed' и возвращающая объект собаки.
 const dogFactory = (name, age, breed) => {
   return {
     name: name,
     age: age,
     breed: breed,
     bark() {
-      console.log('Woof!');
+      console.log('Гав!');
     }
   };
 };
 ```
 
-### Object methods
+### Методы объекта
 
 ```javascript
 const engine = {
-  // method shorthand, with one argument
+  // сокращённая запись метода, с одним аргументом
   start(adverb) {
-    console.log(`The engine starts up ${adverb}...`);
+    console.log(`Двигатель запускается ${adverb}...`);
   },
-  // anonymous arrow function expression with no arguments
+  // анонимная стрелочная функция без аргументов
   sputter: () => {
-    console.log('The engine sputters...');
+    console.log('Двигатель тарахтит...');
   }
 };
 
-engine.start('noisily');
+engine.start('громко');
 engine.sputter();
 ```
 
-### Getters and setters
+### Геттеры и сеттеры
 
 ```javascript
 const myCat = {
-  _name: 'Dottie',
+  _name: 'Дотти',
   get name() {
     return this._name;
   },
@@ -1014,16 +1011,16 @@ const myCat = {
   }
 };
 
-// Reference invokes the getter
+// Обращение вызывает геттер
 console.log(myCat.name);
 
-// Assignment invokes the setter
-myCat.name = 'Yankee';
+// Присваивание вызывает сеттер
+myCat.name = 'Янки';
 ```
 
-## JavaScript Classes
+## Классы JavaScript
 
-### Static Methods
+### Статические методы
 
 ```javascript
 class Dog {
@@ -1032,23 +1029,23 @@ class Dog {
   }
 
   introduce() {
-    console.log('This is ' + this._name + ' !');
+    console.log('Это ' + this._name + ' !');
   }
 
-  // A static method
+  // Статический метод
   static bark() {
-    console.log('Woof!');
+    console.log('Гав!');
   }
 }
 
-const myDog = new Dog('Buster');
+const myDog = new Dog('Бастер');
 myDog.introduce();
 
-// Calling the static method
+// Вызов статического метода
 Dog.bark();
 ```
 
-### Class
+### Класс
 
 ```javascript
 class Song {
@@ -1058,7 +1055,7 @@ class Song {
   }
 
   play() {
-    console.log('Song playing!');
+    console.log('Воспроизведение песни!');
   }
 }
 
@@ -1066,7 +1063,7 @@ const mySong = new Song();
 mySong.play();
 ```
 
-### Class Constructor
+### Конструктор класса
 
 ```javascript
 class Song {
@@ -1076,20 +1073,20 @@ class Song {
   }
 }
 
-const mySong = new Song('Bohemian Rhapsody', 'Queen');
+const mySong = new Song('Богемская рапсодия', 'Queen');
 console.log(mySong.title);
 ```
 
-### Class Methods
+### Методы класса
 
 ```javascript
 class Song {
   play() {
-    console.log('Playing!');
+    console.log('Воспроизведение!');
   }
 
   stop() {
-    console.log('Stopping!');
+    console.log('Остановлено!');
   }
 }
 ```
@@ -1097,7 +1094,7 @@ class Song {
 ### extends
 
 ```javascript
-// Parent class
+// Родительский класс
 class Media {
   constructor(info) {
     this.publishDate = info.publishDate;
@@ -1105,7 +1102,7 @@ class Media {
   }
 }
 
-// Child class
+// Дочерний класс
 class Song extends Media {
   constructor(songData) {
     super(songData);
@@ -1115,14 +1112,14 @@ class Song extends Media {
 
 const mySong = new Song({
   artist: 'Queen',
-  name: 'Bohemian Rhapsody',
+  name: 'Богемская рапсодия',
   publishDate: 1975
 });
 ```
 
-## JavaScript Modules {.cols-2}
+## Модули JavaScript {.cols-2}
 
-### Export
+### Экспорт
 
 ```javascript
 // myMath.js
@@ -1147,7 +1144,7 @@ function duplicate(x) {
 export { multiply, duplicate };
 ```
 
-### Import
+### Импорт
 
 ```javascript
 // main.js
@@ -1162,7 +1159,7 @@ console.log(duplicate(5)) // 10
 <script type="module" src="main.js"></script>
 ```
 
-### Export Module
+### Экспорт модуля
 
 ```javascript
 // myMath.js
@@ -1189,7 +1186,7 @@ module.exports = {
 };
 ```
 
-### Require Module
+### Импорт модуля (require)
 
 ```javascript
 // main.js
@@ -1201,18 +1198,18 @@ console.log(myMath.multiply(6, 2)); // 12
 console.log(myMath.duplicate(5)); // 10
 ```
 
-## JavaScript Promises {.cols-2}
+## Промисы JavaScript {.cols-2}
 
-### Promise states {.row-span-2}
+### Состояния Promise {.row-span-2}
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
   const res = true;
-  // An asynchronous operation.
+  // Асинхронная операция.
   if (res) {
-    resolve('Resolved!');
+    resolve('Выполнено!');
   } else {
-    reject(Error('Error'));
+    reject(Error('Ошибка'));
   }
 });
 
@@ -1222,11 +1219,11 @@ promise.then(
 );
 ```
 
-### Executor function
+### Функция-исполнитель
 
 ```javascript
 const executorFn = (resolve, reject) => {
-  resolve('Resolved!');
+  resolve('Выполнено!');
 };
 
 const promise = new Promise(executorFn);
@@ -1236,18 +1233,18 @@ const promise = new Promise(executorFn);
 
 ```javascript
 const loginAlert = () => {
-  console.log('Login');
+  console.log('Вход');
 };
 
 setTimeout(loginAlert, 6000);
 ```
 
-### .then() method
+### Метод .then()
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('Result');
+    resolve('Результат');
   }, 200);
 });
 
@@ -1261,12 +1258,12 @@ promise.then(
 );
 ```
 
-### Promise.catch()
+### Метод .catch()
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    reject(Error('Promise Rejected Unconditionally.'));
+    reject(Error('Промис отклонён безусловно.'));
   }, 1000);
 });
 
@@ -1315,7 +1312,7 @@ Promise.allSettled([promise1, promise2]).then((res) => {
 });
 ```
 
-### Avoiding nested Promise and .then()
+### Избегание вложенных Promise и .then()
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
@@ -1340,7 +1337,7 @@ const print = (val) => {
 promise.then(twoStars).then(oneDot).then(print);
 ```
 
-### Creating
+### Создание
 
 ```javascript
 const executorFn = (resolve, reject) => {
@@ -1350,7 +1347,7 @@ const executorFn = (resolve, reject) => {
 const promise = new Promise(executorFn);
 ```
 
-### Chaining multiple .then()
+### Цепочка нескольких .then()
 
 ```javascript
 const promise = new Promise((resolve) =>
@@ -1373,7 +1370,7 @@ promise
   );
 ```
 
-### Fake http Request with Promise
+### Фейковый HTTP-запрос с Promise
 
 ```javascript
 const mock = (success, timeout = 1000) => {
@@ -1396,9 +1393,9 @@ const someEvent = async () => {
 };
 ```
 
-## JavaScript Async-Await {.cols-2}
+## Async-Await JavaScript {.cols-2}
 
-### Asynchronous
+### Асинхронность
 
 ```javascript
 function helloWorld() {
@@ -1410,22 +1407,22 @@ function helloWorld() {
 }
 
 const msg = async function () {
-  //Async Function Expression
+  // Асинхронное функциональное выражение
   const msg = await helloWorld();
-  console.log('Message:', msg);
+  console.log('Сообщение:', msg);
 };
 
 const msg1 = async () => {
-  //Async Arrow Function
+  // Асинхронная стрелочная функция
   const msg = await helloWorld();
-  console.log('Message:', msg);
+  console.log('Сообщение:', msg);
 };
 
-msg(); // Message: Hello World! <-- after 2 seconds
-msg1(); // Message: Hello World! <-- after 2 seconds
+msg(); // Сообщение: Hello World! <-- через 2 секунды
+msg1(); // Сообщение: Hello World! <-- через 2 секунды
 ```
 
-### Resolving Promises
+### Разрешение промисов
 
 ```javascript
 let pro1 = Promise.resolve(5);
@@ -1437,7 +1434,7 @@ let pro3 = new Promise(function (resolve, reject) {
 Promise.all([pro1, pro2, pro3]).then(function (values) {
   console.log(values);
 });
-// expected => Array [5, 44, "foo"]
+// ожидается => Массив [5, 44, "foo"]
 ```
 
 ### Async Await Promises
@@ -1453,26 +1450,26 @@ function helloWorld() {
 
 async function msg() {
   const msg = await helloWorld();
-  console.log('Message:', msg);
+  console.log('Сообщение:', msg);
 }
 
-msg(); // Message: Hello World! <-- after 2 seconds
+msg(); // Сообщение: Hello World! <-- через 2 секунды
 ```
 
-### Error Handling
+### Обработка ошибок
 
 ```javascript
-let json = '{ "age": 30 }'; // incomplete data
+let json = '{ "age": 30 }'; // неполные данные
 
 try {
-  let user = JSON.parse(json); // <-- no errors
-  console.log(user.name); // no name!
+  let user = JSON.parse(json); // <-- без ошибок
+  console.log(user.name); // нет имени!
 } catch (e) {
-  console.error('Invalid JSON data!');
+  console.error('Некорректные JSON-данные!');
 }
 ```
 
-### Aysnc await operator
+### Оператор async await
 
 ```javascript
 function helloWorld() {
@@ -1485,13 +1482,13 @@ function helloWorld() {
 
 async function msg() {
   const msg = await helloWorld();
-  console.log('Message:', msg);
+  console.log('Сообщение:', msg);
 }
 
-msg(); // Message: Hello World! <-- after 2 seconds
+msg(); // Сообщение: Hello World! <-- через 2 секунды
 ```
 
-## JavaScript Requests
+## Запросы JavaScript
 
 ### JSON
 
@@ -1567,7 +1564,7 @@ fetch(url, {
 }
 ```
 
-### JSON Formatted
+### Форматированный JSON
 
 ```javascript
 fetch('url-that-returns-JSON')
@@ -1580,17 +1577,17 @@ fetch('url-that-returns-JSON')
 ### promise url parameter fetch api
 
 ```javascript
-fetch('url')
-.then(
-  response  => {
+fetch('url').then(
+  (response) => {
     console.log(response);
   },
- rejection => {
+  (rejection) => {
     console.error(rejection.message);
+  }
 );
 ```
 
-### Fetch API Function
+### Функция Fetch API
 
 ```javascript
 fetch('https://api-xxx.com/endpoint', {
@@ -1613,7 +1610,7 @@ fetch('https://api-xxx.com/endpoint', {
   });
 ```
 
-### async await syntax {.col-span-2}
+### Синтаксис async await {.col-span-2}
 
 ```javascript
 const getSuggestions = async () => {
