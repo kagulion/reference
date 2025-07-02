@@ -8,22 +8,22 @@ tags:
 categories:
   - Programming
 intro: |
-  A JavaScript cheat sheet with the most important concepts, functions, methods, and more. A complete quick reference for beginners.
+  Шпаргалка по JavaScript с наиболее важными концепциями, функциями, методами и другим. Полное краткое справочное пособие для новичков.
 plugins:
   - copyCode
   - runCode
 ---
 
-## Getting Started
+## Начало работы
 
-### Introduction
+### Введение
 
-JavaScript is a lightweight, interpreted programming language.
+JavaScript — это легковесный, интерпретируемый язык программирования.
 
-- [JSON cheatsheet](/json) _(cheatsheets.zip)_
-- [Regex in JavaScript](/regex#regex-in-javascript) _(cheatsheets.zip)_
+- [Шпаргалка по JSON](/json) _(cheatsheets.zip)_
+- [Регулярные выражения в JavaScript](/regex#regex-in-javascript) _(cheatsheets.zip)_
 
-### Console
+### Консоль
 
 ```javascript
 // => Hello world!
