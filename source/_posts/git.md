@@ -9,425 +9,431 @@ tags:
   - VCS
 categories:
   - Linux Command
-intro: This cheat sheet summarizes commonly used Git command line instructions for quick reference.
+intro: Этот шпаргалка кратко описывает часто используемые команды Git для быстрой справки.
 plugins:
   - copyCode
 ---
 
-## Getting Started
+## Начало работы
 
-### Create a Repository
+### Создание репозитория
 
-Create a new local repository
+Создать новый локальный репозиторий
 
 ```shell script
-$ git init [project name]
+$ git init [имя проекта]
 ```
 
-Clone a repository
+Клонировать репозиторий
 
 ```shell script
 $ git clone git_url
 ```
 
-Clone a repository into a specified directory
+Клонировать репозиторий в указанную директорию
 
 ```shell script
-$ git clone git_url my_directory
+$ git clone git_url моя_папка
 ```
 
-### Make a change {.row-span-2}
+### Внесение изменений {.row-span-2}
 
-Show modified files in working directory, staged for your next commit
+Показать изменённые файлы в рабочем каталоге, подготовленные для следующего коммита
 
 ```shell script
 $ git status
 ```
 
-Stages the file, ready for commit
+Добавить файл в индекс (staging)
 
 ```shell script
-$ git add [file]
+$ git add [файл]
 ```
 
-Stage all changed files, ready for commit
+Добавить все изменённые файлы в индекс
 
 ```shell script
 $ git add .
 ```
 
-Commit all staged files to version history
+Зафиксировать все подготовленные файлы в истории версий
 
 ```shell script
-$ git commit -m "commit message"
+$ git commit -m "сообщение коммита"
 ```
 
-Commit all your tracked files to version history
+Зафиксировать все отслеживаемые файлы в истории версий
 
 ```shell script
-$ git commit -am "commit message"
+$ git commit -am "сообщение коммита"
 ```
 
-Discard changes in working directory which is not staged
+Отменить изменения в рабочем каталоге, не подготовленные к коммиту
 
 ```shell script
-$ git restore [file]
+$ git restore [файл]
 ```
 
-Unstage a staged file or file which is staged
+Убрать файл из индекса
 
 ```shell script
-$ git restore --staged [file]
+$ git restore --staged [файл]
 ```
 
-Unstage a file, keeping the file changes
+Убрать файл из индекса, сохранив изменения
 
 ```shell script
-$ git reset [file]
+$ git reset [файл]
 ```
 
-Revert everything to the last commit
+Откатить всё к последнему коммиту
 
 ```shell script
 $ git reset --hard
 ```
 
-Diff of what is changed but not staged
+Показать разницу между изменениями и индексом
 
 ```shell script
 $ git diff
 ```
 
-Diff of what is staged but not yet committed
+Показать разницу между индексом и последним коммитом
 
 ```shell script
 $ git diff --staged
 ```
 
-Apply any commits of current branch ahead of specified one
+Применить коммиты текущей ветки поверх указанной
 
 ```shell script
-$ git rebase [branch]
+$ git rebase [ветка]
 ```
 
-### Configuration
+### Конфигурация
 
-Set the name that will be attached to your commits and tags
+Задать имя, которое будет прикреплено к вашим коммитам и тегам
 
 ```shell script
-$ git config --global user.name "name"
+$ git config --global user.name "имя"
 ```
 
-Set an email address that will be attached to your commits and tags
+Задать email, который будет прикреплён к вашим коммитам и тегам
 
 ```shell script
 $ git config --global user.email "email"
 ```
 
-Enable some colorization of Git output
+Включить цветной вывод Git
 
 ```shell script
 $ git config --global color.ui auto
 ```
 
-Edit the global configuration file in a text editor
+Открыть глобальный конфигурационный файл в редакторе
 
 ```shell script
 $ git config --global --edit
 ```
 
-### Working with Branches
+### Работа с ветками
 
-List all local branches
+Показать все локальные ветки
 
 ```shell script
 $ git branch
 ```
 
-List all branches, local and remote
+Показать все ветки, локальные и удалённые
 
 ```shell script
 $ git branch -av
 ```
 
-Switch to my_branch, and update working directory
+Переключиться на `my_branch` и обновить рабочий каталог
 
 ```shell script
 $ git checkout my_branch
 ```
 
-Create a new branch called new_branch
+Создать новую ветку `new_branch`
 
 ```shell script
 $ git checkout -b new_branch
 ```
 
-Delete the branch called my_branch
+Удалить ветку `my_branch`
 
 ```shell script
 $ git branch -d my_branch
 ```
 
-Merge branchA into branchB
+Слить ветку `branchA` в `branchB`
 
 ```shell script
 $ git checkout branchB
 $ git merge branchA
 ```
 
-Tag the current commit
+Добавить тег к текущему коммиту
 
 ```shell script
 $ git tag my_tag
 ```
 
-### Observe your Repository
+### Просмотр репозитория
 
-Show the commit history for the currently active branch
+Показать историю коммитов для активной ветки
 
 ```shell script
 $ git log
 ```
 
-Show the commits on branchA that are not on branchB
+Показать коммиты в `branchA`, которых нет в `branchB`
 
 ```shell script
 $ git log branchB..branchA
 ```
 
-Show the commits that changed file, even across renames
+Показать коммиты, изменившие файл (даже после переименования)
 
 ```shell script
-$ git log --follow [file]
+$ git log --follow [файл]
 ```
 
-Show the diff of what is in branchA that is not in branchB
+Показать разницу между ветками
 
 ```shell script
 $ git diff branchB...branchA
 ```
 
-Show any object in Git in human-readable format
+Показать любой объект Git в читаемом виде
 
 ```shell script
 $ git show [SHA]
 ```
 
-### Synchronize
+### Синхронизация
 
-Fetch down all the branches from that Git remote
-
-```shell script
-$ git fetch [alias]
-```
-
-Merge a remote branch into your current branch to bring it up to date
+Загрузить все ветки с удалённого репозитория
 
 ```shell script
-$ git merge [alias]/[branch]
-# No fast-forward
-$ git merge --no-ff [alias]/[branch]
-# Only fast-forward
-$ git merge --ff-only [alias]/[branch]
+$ git fetch [псевдоним]
 ```
 
-Transmit local branch commits to the remote repository branch
+Слить удалённую ветку с текущей
 
 ```shell script
-$ git push [alias] [branch]
+$ git merge [псевдоним]/[ветка]
+# Без fast-forward
+$ git merge --no-ff [псевдоним]/[ветка]
+# Только fast-forward
+$ git merge --ff-only [псевдоним]/[ветка]
 ```
 
-Fetch and merge any commits from the tracking remote branch
+Отправить локальные коммиты на удалённый репозиторий
+
+```shell script
+$ git push [псевдоним] [ветка]
+```
+
+Загрузить и слить изменения с отслеживаемой ветки
 
 ```shell script
 $ git pull
 ```
 
-Merge just one specific commit from another branch to your current branch
+Слить конкретный коммит из другой ветки
 
 ```shell script
-$ git cherry-pick [commit_id]
+$ git cherry-pick [id_коммита]
 ```
 
-### Remote
+### Удалённый репозиторий
 
-Add a git URL as an alias
+Добавить URL репозитория как псевдоним
 
 ```shell script
-$ git remote add [alias] [url]
+$ git remote add [псевдоним] [url]
 ```
 
-Show the names of the remote repositories you've set up
+Показать имена настроенных удалённых репозиториев
 
 ```shell script
 $ git remote
 ```
 
-Show the names and URLs of the remote repositories
+Показать имена и URL удалённых репозиториев
 
 ```shell script
 $ git remote -v
 ```
 
-Remove a remote repository
+Удалить удалённый репозиторий
 
 ```shell script
-$ git remote rm [remote repo name]
+$ git remote rm [имя]
 ```
 
-Change the URL of the git repo
+Изменить URL удалённого репозитория
 
 ```shell script
 $ git remote set-url origin [git_url]
 ```
 
-### Temporary Commits
+### Временные коммиты
 
-Save modified and staged changes
+Сохранить текущие изменения и подготовленные файлы
 
 ```shell script
 $ git stash
 ```
 
-List stack-order of stashed file changes
+Показать список сохранённых изменений
 
 ```shell script
 $ git stash list
 ```
 
-Write working from top of stash stack
+Применить верхний stash
 
 ```shell script
 $ git stash pop
 ```
 
-Discard the changes from top of stash stack
+Удалить верхний stash
 
 ```shell script
 $ git stash drop
 ```
 
-### Tracking path Changes
+### Отслеживание изменений путей
 
-Delete the file from project and stage the removal for commit
-
-```shell script
-$ git rm [file]
-```
-
-Change an existing file path and stage the move
+Удалить файл из проекта и подготовить удаление к коммиту
 
 ```shell script
-$ git mv [existing-path] [new-path]
+$ git rm [файл]
 ```
 
-Show all commit logs with indication of any paths that moved
+Переместить файл и подготовить перемещение
+
+```shell script
+$ git mv [старый_путь] [новый_путь]
+```
+
+Показать логи коммитов с информацией о перемещённых файлах
 
 ```shell script
 $ git log --stat -M
 ```
 
-### Ignoring Files
+### Игнорирование файлов
 
 ```
 /logs/*
 
-# "!" means don't ignore
+# "!" значит не игнорировать
 !logs/.gitkeep
 
-/# Ignore Mac system files
+/# Игнорировать системные файлы Mac
 .DS_store
 
-# Ignore node_modules folder
+# Игнорировать папку node_modules
 node_modules
 
-# Ignore SASS config files
+# Игнорировать конфигурацию SASS
 .sass-cache
 ```
 
-A `.gitignore` file specifies intentionally untracked files that Git should ignore
+Файл `.gitignore` указывает файлы и папки, которые Git должен игнорировать
 
-## Git Tricks
+## Полезные приёмы
 
-### Rename branch
+### Переименование ветки
 
-- #### **Renamed** to `new_name`
+- #### **Переименовать** в `new_name`
+
   ```shell script
   $ git branch -m <new_name>
   ```
-- #### **Push** and reset
+
+- #### **Запушить** и сбросить
+
   ```shell script
   $ git push origin -u <new_name>
   ```
-- #### **Delete** remote branch
+
+- #### **Удалить** старую ветку на удалённом репозитории
+
   ```shell script
   $ git push origin --delete <old>
   ```
+
   {.marker-timeline}
 
-### Log
+### Логи
 
-Search change by content
-
-```shell script
-$ git log -S'<a term in the source>'
-```
-
-Show changes over time for specific file
+Найти изменения по содержимому
 
 ```shell script
-$ git log -p <file_name>
+$ git log -S'<слово_в_коде>'
 ```
 
-Print out a cool visualization of your log
+Показать изменения конкретного файла со временем
+
+```shell script
+$ git log -p <имя_файла>
+```
+
+Красивое визуальное отображение лога
 
 ```shell script {.wrap}
 $ git log --pretty=oneline --graph --decorate --all
 ```
 
-### Branch {.row-span-2}
+### Ветки {.row-span-2}
 
-List all branches and their upstreams
+Показать все ветки и их upstream
 
 ```shell script
 $ git branch -vv
 ```
 
-Quickly switch to the previous branch
+Быстро переключиться на предыдущую ветку
 
 ```shell script
 $ git checkout -
 ```
 
-Get only remote branches
+Показать только удалённые ветки
 
 ```shell script
 $ git branch -r
 ```
 
-Checkout a single file from another branch
+Взять один файл из другой ветки
 
 ```shell script
-$ git checkout <branch> -- <file>
+$ git checkout <ветка> -- <файл>
 ```
 
-### Rewriting history
+### Переписывание истории
 
-Rewrite last commit message
+Переписать сообщение последнего коммита
 
 ```shell script
-$ git commit --amend -m "new message"
+$ git commit --amend -m "новое сообщение"
 ```
 
-Amend the latest commit without changing the commit message.
+Изменить последний коммит без изменения сообщения
 
 ```shell script
 $ git commit --amend --no-edit
 ```
 
-See also: [Rewriting history](https://www.atlassian.com/git/tutorials/rewriting-history)
+См. также: [Rewriting history](https://www.atlassian.com/git/tutorials/rewriting-history)
 
-### Git Aliases
+### Алиасы Git
 
 ```cmd
 git config --global alias.co checkout
@@ -436,62 +442,62 @@ git config --global alias.ci commit
 git config --global alias.st status
 ```
 
-See also: [More Aliases](https://gist.github.com/johnpolacek/69604a1f6861129ef088)
+См. также: [More Aliases](https://gist.github.com/johnpolacek/69604a1f6861129ef088)
 
-## Advanced Git
+## Продвинутый Git
 
-### Submodules
+### Подмодули
 
-Create a new submodule within your repository:
-
-```shell script
-$ git submodule add <repository_url> <path>
-```
-
-Clone a repository and initialize its submodules:
+Создать новый подмодуль в репозитории:
 
 ```shell script
-$ git clone --recursive <repository_url>
+$ git submodule add <url_репозитория> <путь>
 ```
 
-Update all the submodules in your repository to the latest commit of their respective branches:
+Клонировать репозиторий и инициализировать его подмодули:
+
+```shell script
+$ git clone --recursive <url_репозитория>
+```
+
+Обновить все подмодули до последних коммитов:
 
 ```shell script
 $ git submodule update
 ```
 
-Pull the latest changes from the remote repositories of the submodules and update them in your main repository:
+Загрузить последние изменения подмодулей:
 
 ```shell script
 $ git submodule update --remote
 ```
 
-Remove a submodule from your repository:
+Удалить подмодуль из репозитория:
 
 ```shell script
-$ git submodule deinit <path>
-$ git rm <path>
-$ git commit -m "Removed submodule"
+$ git submodule deinit <путь>
+$ git rm <путь>
+$ git commit -m "Удалён подмодуль"
 ```
 
-### Cherry-picking
+### Cherry-pick
 
-Cherry-picking allows you to apply a specific commit from one branch to another branch.
+Cherry-pick позволяет применить конкретный коммит из одной ветки в другую.
 
 ```shell script
-$ git cherry-pick <commit_hash>
+$ git cherry-pick <хеш_коммита>
 ```
 
 ### Reflog
 
-Display the reflog, showing the history of HEAD and branch movements:
+Показать историю изменений HEAD и веток:
 
 ```shell script
 $ git reflog
 ```
 
-Find the hash of the lost commit or branch using the reflog and then checkout to that hash to restore it:
+Найти хеш потерянного коммита или ветки и вернуть его:
 
 ```shell script
-$ git checkout <commit_or_branch_hash>
+$ git checkout <хеш_коммита_или_ветки>
 ```
